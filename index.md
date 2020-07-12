@@ -1,7 +1,7 @@
 ## My take and other notes on pythonchallenge.com
 
 ### Challenge 1
-This challenge is easy. We can directly type into python console 2**38, and replace the internet address page 0, with the result of 2**38 from the console.
+This challenge is easy. We can directly type into python console 2\*\*38, and replace the internet address page 0, with the result of 2\*\*38 from the console.
 
 ### Challenge 2
 This one is quite complicated for beginner like me. When I started working on this, it took me a while - I think about two days, with many breaks. 
