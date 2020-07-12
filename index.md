@@ -23,9 +23,9 @@ Here is my solution in python console (I tried using function, but revert back t
 [6] textInput_list = list(textInput)                            #I made a list variable for the characters in textInput so later I can use the dictionary to replace the content of this list.
                                                                 #Note that I learn from this exercise that we can't replace direcly each character in a string variable.
 [7] for i in range(0,len(textInput)):
-...    textInput_list.replace(textInput_list[i],alphabetDict[textInput_list[i]])  
+...    textInput_list[i]=alphabetDict[textInput_list[i]]
                                                                 #looping through the textInput_list and replace each character according to the dictionary
-... textOutput="".join(textInput_list)
+... textOutput="".join(textInput_list)                          #re-join the list into string
 [8] print(textOutput)                                           #will display the conversion result.
 ```
 Now from the answer, I was suggested to use string.maketrans(). I'm not sure what this is. So I will find out and update this with a solution using that method.
