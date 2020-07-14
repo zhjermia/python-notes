@@ -39,8 +39,8 @@ So with this method, it is much simpler as the following.
 ```
 [1] intab = 'abcdefghijklmnopqrstuvwxyz'
 [2] outtab = 'cdefghijklmnopqrstuvwzyzab'         #in this case, to think to use any function is ridiculous, I just typed it manually
-[3] trantab = inputstr.maketrans(intab,outtab)
-[4] inputstr = 'g fmnc wms bgblr rpylqjyrc gr zw fylb. rfyrq ufyr amknsrcpq ypc dmp. bmgle gr gl zw fylb gq glcddgagclr ylb rfyr\'q ufw rfgq rcvr gq qm jmle. sqgle qrpgle.kyicrpylq() gq pcamkkclbcb. lmu ynnjw ml rfc spj.'
-[5] outputstr = inputstr.translate(trantab)
-[6] outputstr
+[3] trantab = textInput.maketrans(intab,outtab)
+[4] textInput = 'g fmnc wms bgblr rpylqjyrc gr zw fylb. rfyrq ufyr amknsrcpq ypc dmp. bmgle gr gl zw fylb gq glcddgagclr ylb rfyr\'q ufw rfgq rcvr gq qm jmle. sqgle qrpgle.kyicrpylq() gq pcamkkclbcb. lmu ynnjw ml rfc spj.'
+[5] textOutput = textInput.translate(trantab)
+[6] textOutput
 ```
