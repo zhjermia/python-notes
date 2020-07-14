@@ -30,4 +30,17 @@ Here is my solution in python console (I tried using function, but revert back t
 ```
 Now from the answer, I was suggested to use string.maketrans(). ~~I'm not sure what this is. So I will find out and update this with a solution using that method.~~
 
-After some quick google, I found out that string.maketrans() is deprecated in python 3.x, and replaced by str.makestrans().
+After some quick google, I found out that string.maketrans() is deprecated in python 3.x, and replaced by str.makestrans(). A clear example is in here: https://www.tutorialspoint.com/python3/string_maketrans.htm
+
+Another good things is that the characters that are not to be translated will be left intact in the input string.
+
+So with this method, it is much simpler as the following.
+
+```
+[1] intab = 'abcdefghijklmnopqrstuvwxyz'
+[2] outtab = 'cdefghijklmnopqrstuvwzyzab'         #in this case, to think to use any function is ridiculous, I just typed it manually
+[3] trantab = inputstr.maketrans(intab,outtab)
+[4] inputstr = 'g fmnc wms bgblr rpylqjyrc gr zw fylb. rfyrq ufyr amknsrcpq ypc dmp. bmgle gr gl zw fylb gq glcddgagclr ylb rfyr\'q ufw rfgq rcvr gq qm jmle. sqgle qrpgle.kyicrpylq() gq pcamkkclbcb. lmu ynnjw ml rfc spj.'
+[5] outputstr = inputstr.translate(trantab)
+[6] outputstr
+```
