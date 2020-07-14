@@ -17,7 +17,7 @@ Here is my solution in python console (I tried using function, but revert back t
 [2] alphabetDict = {alphabet[0]:alphabet[2]}                    #I initiate a dictionary for conversion of each character. This initiation is direct because from the clue I knew that the shifting is two characters.
 [3] for i in range(0,26):
 ...     alphabetDict.update({alphabet[i]:alphabet[(i+2)%26]})   #Here I update the dictionary to complete keys for all alphabet
-[4] alphabetDict.update({'.':'.'})                              #important to update dictionary with each character in the challenge, this line is repeated for other character.
+[4] alphabetDict.update({'.':'.'})                           https://stackoverflow.com/questions/3031045/how-come-string-maketrans-does-not-work-in-python-3-1   #important to update dictionary with each character in the challenge, this line is repeated for other character.
 [5] textInput = '`g fmnc wms bgblr rpylqjyrc gr zw fylb. rfyrq ufyr amknsrcpq ypc dmp. bmgle gr gl zw fylb gq glcddgagclr ylb rfyr\'q ufw rfgq rcvr gq qm jmle. sqgle qrpgle.kyicrpylq() gq pcamkkclbcb. lmu ynnjw ml rfc spj.`
 #Here I put the challenge into a variable named textInput
 [6] textInput_list = list(textInput)                            #I made a list variable for the characters in textInput so later I can use the dictionary to replace the content of this list.
@@ -28,4 +28,6 @@ Here is my solution in python console (I tried using function, but revert back t
 ... textOutput="".join(textInput_list)                          #re-join the list into string
 [8] print(textOutput)                                           #will display the conversion result.
 ```
-Now from the answer, I was suggested to use string.maketrans(). I'm not sure what this is. So I will find out and update this with a solution using that method.
+Now from the answer, I was suggested to use string.maketrans(). --I'm not sure what this is. So I will find out and update this with a solution using that method.--
+
+After some quick google, I found out that string.maketrans() is deprecated in python 3.x, and replaced by str.makestrans().
