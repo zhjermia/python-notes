@@ -28,6 +28,6 @@ Here is my solution in python console (I tried using function, but revert back t
 ... textOutput="".join(textInput_list)                          #re-join the list into string
 [8] print(textOutput)                                           #will display the conversion result.
 ```
-Now from the answer, I was suggested to use string.maketrans(). --I'm not sure what this is. So I will find out and update this with a solution using that method.--
+Now from the answer, I was suggested to use string.maketrans(). ~~I'm not sure what this is. So I will find out and update this with a solution using that method.~~
 
 After some quick google, I found out that string.maketrans() is deprecated in python 3.x, and replaced by str.makestrans().
