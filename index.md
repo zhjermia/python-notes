@@ -44,3 +44,9 @@ So with this method, it is much simpler as the following.
 [5] textOutput = textInput.translate(trantab)
 [6] textOutput
 ```
+
+### Challenge 3
+This one is already difficult, but search engines are your friends. So to quote the challenge, here is the clue `recognize the characters. maybe they are in the book,
+but MAYBE they are in the page source.
+`
+The clue is easy: it is to open the html source. In the source, there is a large body of text which seems to be containing random characters. The challenge is to understand what to do with this large body of text. I don't see any other clue, just to "recognize the characters". Hmm, what to do...
