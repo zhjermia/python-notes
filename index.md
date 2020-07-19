@@ -50,4 +50,49 @@ This one is already difficult, but search engines are your friends. So to quote 
 but MAYBE they are in the page source.
 `
 The clue is easy: it is to open the html source. In the source, there is a large body of text which seems to be containing random characters. The challenge is to understand what to do with this large body of text. I don't see any other clue, just to "recognize the characters". Hmm, what to do...
+
 Update: after opening the page source, we can find that in the beginning of the <html> tag, there is another clue: `find rare characters in the mess below:`, then the random characters.
+
+I started googling (or "binging" :)), looking for ways to read the html from its address so not to copy-paste the large text into my computer. I was sure that there must be a way to do this. So I found about html.parser in a website (https://www.pythoncentral.io/html-parser/) and in python docs (https://docs.python.org/3/library/html.parser.html). There is an example there in the first website that I tried for our pythonchallenge web address instead of the New York Times. Just then I realized that the random text is a comment in the source, so with exactly the example code I mentioned above, I can get the random text body and assign it to a variable. Next I should find a way on how to process this text to find out the rare characters.
+
+Note that upon assigning the text in a variable I made, randomText, I checked the length (len(randomText)) and found the length is only 2. So I typed type(randomText) and python told me that this variable is a list and not a string.
+
+I then checked the content of the list using randomText[0] and randomText[1]. Our text of interest is in the randomText[1]. 
+
+Next I search the internet for the definition of rare characters and found this website (https://stackoverflow.com/questions/35791855/find-rare-characters-with-python). 
+
+Below is the code I used
+```
+class myHtmlParser(HTMLParser):
+    #initializing lists
+    lsStartTags = list()
+    lsEndTags = list()
+    lsStartEndTags = list()
+    lsComments = list()
+    #HTML parser method
+    def handle_starttag(self,startTag,attrs):
+        self.lsStartTags.append(startTag)
+    def handle_endtag(self,endTag):
+        self.lsEndTags.append(endTag)
+    def handle_startendtag(self,startEndTag,attrs):
+        self.lsStartEndTags.append(startEndTag)
+    def handle_comment(self,data):
+        self.lsComments.append(data)
+#creating an object of the overridden class
+parser=myHtmlParser()
+#open the url using urllib2 and assign it to a var html_page
+html_page = urllib2.urlopen("http://www.pythonchallenge.com/pc/def/ocr.html")
+#using the parser to read the html_page
+parser.feed(str(html_page.read()))
+#take the comments part of the html and put into a var randomText
+randomText = parser.lsComments
+#use collections.Counter module
+from collections import Counter
+#to count each character frequency, here I assign it to a var charFreq
+charFreq = Counter(randomText[1])
+#then here I can print the result and found the answer to this challenge :)
+print(charFreq.most_common())
+
+```
+
+ 
