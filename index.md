@@ -94,5 +94,5 @@ charFreq = Counter(randomText[1])
 print(charFreq.most_common())
 
 ```
-
+Some interesting solutions can be found in the solution page (http://wiki.pythonchallenge.com/index.php?title=Level2:Main_Page#Rare_characters_.3D_less_frequent_than_average)
  
