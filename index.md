@@ -50,3 +50,4 @@ This one is already difficult, but search engines are your friends. So to quote 
 but MAYBE they are in the page source.
 `
 The clue is easy: it is to open the html source. In the source, there is a large body of text which seems to be containing random characters. The challenge is to understand what to do with this large body of text. I don't see any other clue, just to "recognize the characters". Hmm, what to do...
+Update: after opening the page source, we can find that in the beginning of the <html> tag, there is another clue: `find rare characters in the mess below:`, then the random characters.
