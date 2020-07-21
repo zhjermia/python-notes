@@ -96,3 +96,9 @@ print(charFreq.most_common())
 ```
 Some interesting solutions can be found in the solution page (http://wiki.pythonchallenge.com/index.php?title=Level2:Main_Page#Rare_characters_.3D_less_frequent_than_average)
  
+### Challenge 4
+This challenge was tricky. I didn't think about checking the page source. But then I thought why not, because the previous one was requiring the page source. So I pressed ctrl+u and found another large body of text. So the challenge is to find from the text, a small letter, with three big letters on each of its sides, e.g. ABCdEFG. 
+
+Probably what I need is a code to roll along the text, while checking 7 characters forward, with 3 first characters are big letters, followed by a small letter, and then another 3 big letters.
+
+
