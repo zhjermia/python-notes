@@ -63,6 +63,9 @@ Next I search the internet for the definition of rare characters and found this 
 
 Below is the code I used
 ```
+from html.parser import HTMLParser
+from urllib.request import urlopen
+
 class myHtmlParser(HTMLParser):
     #initializing lists
     lsStartTags = list()
@@ -81,7 +84,7 @@ class myHtmlParser(HTMLParser):
 #creating an object of the overridden class
 parser=myHtmlParser()
 #open the url using urllib2 and assign it to a var html_page
-html_page = urllib2.urlopen("http://www.pythonchallenge.com/pc/def/ocr.html")
+html_page = urlopen("http://www.pythonchallenge.com/pc/def/ocr.html")
 #using the parser to read the html_page
 parser.feed(str(html_page.read()))
 #take the comments part of the html and put into a var randomText
