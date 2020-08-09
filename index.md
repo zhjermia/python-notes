@@ -105,7 +105,6 @@ This challenge was tricky. I didn't think about checking the page source. But th
 Probably what I need is a code to roll along the text, while checking 7 characters forward, with 3 first characters are big letters, followed by a small letter, and then another 3 big letters.
 
 I got a clue from the book "Automate the Boring Stuff with Python" by Al Sweigart in the Chapter about Regex. Much of the code I used previously can be used again to get the random text, and only after getting the random text the regex is in use.
-
 ```
 from html.parser import HTMLParser
 from urllib.request import urlopen
@@ -139,5 +138,6 @@ import re
 answer = re.findall('[a-z][A-Z]{3}[a-z][A-Z]{3}[a-z]', randomText[0])
 
 print(answer)
+
 ```
 
